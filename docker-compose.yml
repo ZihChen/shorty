@@ -15,7 +15,7 @@ services:
     networks:
       - shorty_service
     volumes:
-      - .:/go/src/mini-news
+      - .:/go/src/${PROJECT_NAME}
     command: "fresh runner.conf"
   mongo:
     image: mongo

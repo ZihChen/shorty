@@ -1,19 +1,14 @@
 package main
 
 import (
-	"fmt"
 	"shorty/internal/mongodb"
+	"shorty/internal/server"
 )
 
 func init() {
-
+	mongodb.NewInstance()
 }
 
 func main() {
-
-	dbIns := mongodb.NewInstance()
-
-	dbIns.GetConnection()
-
-	fmt.Println("hello world!")
+	server.Run()
 }

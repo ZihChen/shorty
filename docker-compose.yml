@@ -5,6 +5,8 @@ services:
     build:
       context: .
     container_name: ${PROJECT_NAME}
+    ports:
+      - 8083:8083
     restart: always
     environment:
       - ENV = local
@@ -32,6 +34,7 @@ services:
       - shorty_service
   mongo-express:
     image: mongo-express
+    container_name: mongo-express
     restart: always
     ports:
       - 8081:8081

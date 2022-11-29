@@ -6,7 +6,8 @@ import (
 )
 
 func init() {
-	mongodb.NewInstance()
+	db := mongodb.NewInstance()
+	db.GetConnection()
 }
 
 func main() {

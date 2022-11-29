@@ -34,7 +34,7 @@ func (db *dbIns) GetConnection() (*mongo.Database, error) {
 	ctxTimeout, cancel := context.WithTimeout(db.ctx, 15*time.Second)
 	defer cancel()
 
-	clientOptions := options.Client().ApplyURI("mongodb://root:root@localhost:27017").
+	clientOptions := options.Client().ApplyURI("mongodb://root:root@shorty-mongodb:27017").
 		SetMaxPoolSize(2000).                // 連線池最大連接數
 		SetMaxConnIdleTime(10 * time.Second) // 閒置連接最大保持毫秒數 10s
 
@@ -47,7 +47,7 @@ func (db *dbIns) GetConnection() (*mongo.Database, error) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	connectPool = client.Database("test")
+	connectPool = client.Database("shorty")
 
 	fmt.Println("Connected to MongoDB!")
 

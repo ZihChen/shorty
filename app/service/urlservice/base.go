@@ -7,6 +7,7 @@ import (
 
 type Interface interface {
 	CreateRedirectUrl(originUrl string) (redirectUrl string, err error)
+	GetOriginUrl(redirectUrl string) (originUrl string, err error)
 }
 
 type service struct {

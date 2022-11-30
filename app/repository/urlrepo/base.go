@@ -8,6 +8,7 @@ import (
 
 type Interface interface {
 	InsertData(url model.Url) (err error)
+	FindOriginUrl(redirectUrl string) (url model.Url, err error)
 }
 
 type repo struct {

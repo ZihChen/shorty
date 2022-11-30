@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func (h *Handler) RedirectUrl(ctx *gin.Context) {
+func (h *Handler) CreateRedirectUrl(ctx *gin.Context) {
 	url := ctx.PostForm("url")
 
 	redirectUrl, err := h.urlService.CreateRedirectUrl(url)

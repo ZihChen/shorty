@@ -1,6 +1,7 @@
 package urlhandler
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -14,5 +15,5 @@ func (h *Handler) CreateRedirectUrl(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusOK, redirectUrl)
+	ctx.JSON(http.StatusOK, fmt.Sprintf("localhost:8083/%s", redirectUrl))
 }

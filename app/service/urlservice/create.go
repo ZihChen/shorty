@@ -17,5 +17,5 @@ func (s *service) CreateRedirectUrl(originUrl string) (redirectUrl string, err e
 		return
 	}
 
-	return
+	return replaceUrl, nil
 }
